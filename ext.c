@@ -1,4 +1,4 @@
-#include "s_shell"
+#include "s_shell.h"
 
 /**
  * _execute - Executes a command with arguments.
