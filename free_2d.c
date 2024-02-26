@@ -1,4 +1,4 @@
-#include "s_shell"
+#include "s_shell.h"
 
 /**
  * free_2Darr - Frees memory allocated for a two-dimensional
