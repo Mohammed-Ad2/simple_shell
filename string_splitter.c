@@ -1,52 +1,47 @@
 #include "s_shell.h"
-
 /**
- * mytoken - Tokenizes a string.
- * @userLine: User input.
- * Return: Tokenized string.
+ * splitter - Tokenizes a string.
+ * @str: The string to be tokenized.
+ *
+ * Return: An array of strings containing the tokens.
+ *         Returns NULL if @str is NULL or if memory allocation fails.
  */
 char **splitter(char *str)
 {
-	char **command = NULL, *token = NULL, *temp = NULL;
-	int i, t_count = 0;
+	char **cmd = NULL, *token = NULL, *temp = NULL;
+	int t_count = 0;
 
 	if (!str)
 		return (NULL);
-
-	temp = _strdup(str);
-
-    token = strtok(temp, " ");
-    if (token == NULL)
+	temp = strdup(str);
+	token = strtok(temp, " ");
+	if (token == NULL)
 	{
-    	free(temp), temp = NULL;
-    	free(str), str = NULL;
-        return (NULL);
-    }
-
-    while (token)
+		free(temp), temp = NULL;
+		free(str), str = NULL;
+		return (NULL);
+	}
+	while (token)
 	{
-        t_count++;
-        token = strtok(NULL, " ");
-    }
-    free(temp), temp = NULL;
-
-	command = malloc(sizeof(char *) * (t_count + 1));
-	if (!command)
+		t_count++;
+		token = strtok(NULL, " ");
+	}
+	free(temp), temp = NULL;
+	cmd = malloc(sizeof(char *) * (t_count + 1));
+	if (!cmd)
 	{
 		free(str), str = NULL;
-        return (NULL);
+		return (NULL);
 	}
-
+	t_count = 0;
 	token = strtok(str, " ");
 	while (token != NULL)
 	{
-		command[i] = _strdup(token);
+		cmd[t_count] = strdup(token);
 		token = strtok(NULL, " ");
-		i++;
+		t_count++;
 	}
-    free(str), str = NULL;
-
-	command[i] = NULL;
-
-	return (command);
+	free(str), str = NULL;
+	cmd[t_count] = NULL;
+	return (cmd);
 }
