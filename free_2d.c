@@ -18,5 +18,6 @@ void free_2Darr(char **arr)
 		free(arr[i]);
 		arr[i] = NULL;
 	}
+
 	free(arr);
 }
