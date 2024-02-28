@@ -1,4 +1,4 @@
-#include "shell.h"
+#include "s_shell.h"
 /**
  * get_path - Searches for the full path of a command.
  * @cmd: The command to search for.
