@@ -30,6 +30,6 @@ int main(int ac, char **av)
 		if (!cmd)
 			continue;
 
-		status = _execute(cmd, av);
+		status = _execute(cmd, av, i);
 	}
 }
