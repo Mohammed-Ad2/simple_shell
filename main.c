@@ -30,6 +30,9 @@ int main(int ac, char **av)
 		if (!cmd)
 			continue;
 
-		status = _execute(cmd, av, i);
+		if (is_builtin(cmd[0]))
+			h_builtin(cmd, av, &status, i);
+		else
+			status = _execute(cmd, av, i);
 	}
 }
