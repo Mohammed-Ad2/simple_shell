@@ -13,7 +13,7 @@ char **splitter(char *str)
 
 	if (!str)
 		return (NULL);
-	temp = strdup(str);
+	temp = _strdup(str);
 	token = strtok(temp, " ");
 	if (token == NULL)
 	{
@@ -37,7 +37,7 @@ char **splitter(char *str)
 	token = strtok(str, " ");
 	while (token != NULL)
 	{
-		cmd[t_count] = strdup(token);
+		cmd[t_count] = _strdup(token);
 		token = strtok(NULL, " ");
 		t_count++;
 	}
