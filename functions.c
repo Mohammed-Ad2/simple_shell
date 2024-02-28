@@ -35,9 +35,9 @@ void print_err(char *name, char *cmd, int idx)
 	index = _itoa(idx);
 
 	write(STDERR_FILENO, name, _strlen(name));
-	write(STDERR_FILENO, ":", 2);
+	write(STDERR_FILENO, ": ", 2);
 	write(STDERR_FILENO, index, _strlen(index));
-	write(STDERR_FILENO, ":", 2);
+	write(STDERR_FILENO, ": ", 2);
 	write(STDERR_FILENO, cmd, _strlen(cmd));
 	write(STDERR_FILENO, msg, _strlen(msg));
 
