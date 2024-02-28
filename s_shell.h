@@ -21,6 +21,7 @@ int _strlen(char *s);
 char *_strcpy(char *dest, char *src);
 char **splitter(char *str);
 int _execute(char **cmd, char **av);
+void free_2Darr(char **arr);
 char *get_env(char *vaiable);
 
 #endif
