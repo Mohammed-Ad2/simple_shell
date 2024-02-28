@@ -13,15 +13,20 @@
 
 extern char **environ;
 
-char *read_line(void);
 char *_strdup(char *str);
 char *_strcat(char *dest, char *src);
-int _strcmp(char *s1, char *s2);
-int _strlen(char *s);
-char *_strcpy(char *dest, char *src);
+int _strcmp(const char *s1, const char *s2);
+size_t _strlen(const char *s);
+char *_strcpy(char *dest, const char *src);
+char *read_line(void);
 char **splitter(char *str);
-int _execute(char **cmd, char **av);
 void free_2Darr(char **arr);
-char *get_env(char *vaiable);
+int _execute(char **cmd, char **av, int idx);
+int count_tokens(const char *str);
+void print_err(char *name, char *cmd, int idx);
+char *_itoa(int n);
+void swap_str(char *str, int len);
+char *_getenv(char *vaiable);
+char *get_path(char *cmd);
 
 #endif
