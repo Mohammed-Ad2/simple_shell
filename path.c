@@ -28,21 +28,19 @@ char *get_path(char *cmd)
 	while (dir)
 	{
 		full_cmd = malloc(_strlen(dir) + _strlen(cmd) + 2);
-		if (!full_cmd)
+		if (full_cmd)
 		{
-			perror("malloc:");
-			exit(EXIT_FAILURE);
+			_strcpy(full_cmd, dir);
+			_strcat(full_cmd, "/");
+			_strcat(full_cmd, cmd);
+			if (stat(full_cmd, &file_stats) == 0)
+			{
+				free(path_env);
+				return (full_cmd);
+			}
+			free(full_cmd), full_cmd = NULL;
+			dir = strtok(NULL, ":");
 		}
-		_strcpy(full_cmd, dir);
-		_strcat(full_cmd, "/");
-		_strcat(full_cmd, cmd);
-		if (stat(full_cmd, &file_stats) == 0)
-		{
-			free(path_env);
-			return (full_cmd);
-		}
-		free(full_cmd), full_cmd = NULL;
-		dir = strtok(NULL, ":");
 	}
 	free(path_env);
 	return (NULL);
