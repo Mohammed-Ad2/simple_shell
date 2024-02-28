@@ -10,9 +10,9 @@
 int _execute(char **cmd, char **av)
 {
 	int status;
-	pid_t child;
+	pid_t child_value;
 
-	child = fork();
+	child_value = fork();
 	if (child == 0)
 	{
 		if (execve(cmd[0], cmd, environ))
