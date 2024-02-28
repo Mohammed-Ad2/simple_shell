@@ -56,7 +56,7 @@ char *_strcat(char *dest, char *src)
  * @s2: Second input string.
  * Return: 0 if equal, positive or negative value if different.
  */
-int _strcmp(char *s1, char *s2)
+int _strcmp(const char *s1, const char *s2)
 {
 	int i, result = 0;
 
@@ -71,7 +71,7 @@ int _strcmp(char *s1, char *s2)
  * @s: Input string.
  * Return: Length of the string.
  */
-int _strlen(char *s)
+size_t _strlen(const char *s)
 {
 	int length = 0;
 
@@ -90,7 +90,7 @@ int _strlen(char *s)
  * @src: Source string.
  * Return: Pointer to the resulting string (dest).
  */
-char *_strcpy(char *dest, char *src)
+char *_strcpy(char *dest, const char *src)
 {
 	int i;
 
