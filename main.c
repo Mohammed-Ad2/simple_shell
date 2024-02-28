@@ -11,7 +11,7 @@
 int main(int ac, char **av)
 {
 	char **cmd = NULL, *line = NULL;
-	int status = 0;
+	int status = 0, i = 0;
 	(void) ac;
 	(void) av;
 
@@ -24,6 +24,7 @@ int main(int ac, char **av)
 				write(STDOUT_FILENO, "\n", 1);
 			return (status);
 		}
+		i++;
 
 		cmd = splitter(line);
 		if (!cmd)
