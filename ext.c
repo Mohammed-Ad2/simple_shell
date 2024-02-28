@@ -24,7 +24,7 @@ int _execute(char **cmd, char **av)
 	}
 	else
 	{
-		waitpid(child, &status, 0);
+		waitpid(child_value, &status, 0);
 		free_2Darr(cmd);
 	}
 
