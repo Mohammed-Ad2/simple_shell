@@ -25,8 +25,14 @@ int _execute(char **cmd, char **av, int idx);
 int count_tokens(const char *str);
 void print_err(char *name, char *cmd, int idx);
 char *_itoa(int n);
+int _atoi(char *str);
+int is_p_n(char *str);
 void swap_str(char *str, int len);
 char *_getenv(char *vaiable);
 char *get_path(char *cmd);
+int is_builtin(char *cmd);
+void h_builtin(char **cmd, char **av, int *status, int index);
+void exit_shell(char **cmd, char **av, int *status, int index);
+void print_env(char **cmd, int *status);
 
 #endif
