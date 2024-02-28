@@ -13,7 +13,7 @@ int _execute(char **cmd, char **av)
 	pid_t child_value;
 
 	child_value = fork();
-	if (child == 0)
+	if (child_value == 0)
 	{
 		if (execve(cmd[0], cmd, environ))
 		{
