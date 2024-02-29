@@ -11,6 +11,7 @@
 #include <errno.h>
 #include <fcntl.h>
 
+/* Global environemnt */
 extern char **environ;
 
 char *_strdup(char *str);
